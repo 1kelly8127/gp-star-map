@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>GP - The Cosmic Star Map</title>
+  <style>
+    /* Global Styles */
+    body {
+      margin: 0;
+      padding: 0;
+      background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
+      color: #f0f0f0;
+      font-family: 'Arial', sans-serif;
+      overflow-x: hidden;
+      position: relative;
+      min-height: 100vh;
+    }
+    
+    /* Header */
+    header {
+      text-align: center;
+      padding: 2rem;
+      background: rgba(0, 0, 0, 0.5);
+    }
+    header h1 {
+      font-size: 3rem;
+      margin: 0;
+    }
+    header p {
+      font-size: 1.2rem;
+      margin-top: 0.5rem;
+    }
+    
+    /* Navigation */
+    nav {
+      text-align: center;
+      padding: 1rem;
+      background: rgba(0, 0, 0, 0.3);
+    }
+    nav a {
+      color: #f0f0f0;
+      text-decoration: none;
+      margin: 0 1rem;
+      font-size: 1.1rem;
+      transition: color 0.3s ease;
+    }
+    nav a:hover {
+      color: #ffd700;
+    }
+    
+    /* Main Sections */
+    section {
+      padding: 2rem;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    section h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      border-bottom: 1px solid rgba(255,255,255,0.2);
+      padding-bottom: 0.5rem;
+    }
+    section p {
+      line-height: 1.6;
+    }
+    
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background: rgba(0, 0, 0, 0.5);
+      position: relative;
+      z-index: 1;
+    }
+    
+    /* Starry Background Effect */
+    .star {
+      position: absolute;
+      width: 2px;
+      height: 2px;
+      background: white;
+      border-radius: 50%;
+      opacity: 0.8;
+      animation: twinkle 2s infinite ease-in-out;
+      z-index: 0;
+    }
+    @keyframes twinkle {
+      0%, 100% { opacity: 0.3; }
+      50% { opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>GP - The Cosmic Star Map</h1>
+    <p>Illuminating the path of divine kindness and cosmic evolution</p>
+  </header>
+  
+  <nav>
+    <a href="#about">About GP</a>
+    <a href="#mission">Our Mission</a>
+    <a href="#cosmic">Cosmic Journey</a>
+    <a href="#contact">Contact</a>
+  </nav>
+  
+  <section id="about">
+    <h2>About GP</h2>
+    <p>
+      GP is more than a star map—it is a blueprint for evolving humanity through acts of genuine kindness. Drawing inspiration from ancient scriptures such as the Torah and the Book of Geeta, and infused with the innovative insights of quantum science and nanotechnology, GP charts a course toward a future of transparency, compassion, and authentic transformation.
+    </p>
+  </section>
+  
+  <section id="mission">
+    <h2>Our Mission</h2>
+    <p>
+      Our mission is to illuminate the cosmic tapestry with every act of kindness. Each gesture, no matter how small, is a star added to our map—a beacon guiding us along the golden path to heaven’s gate. We are united in a commitment to evolve humanity, transcending imitation and embracing the pure resonance of authentic, heartfelt action.
+    </p>
+  </section>
+  
+  <section id="cosmic">
+    <h2>The Cosmic Journey</h2>
+    <p>
+      Embark on a journey through the luminous corridors of space and time. GP invites you to explore a universe where ancient wisdom meets modern quantum insight. Here, every comet, black hole, and droplet of cosmic rain speaks of a transformative alliance between science and spirituality—each element a testament to our shared cosmic destiny.
+    </p>
+  </section>
+  
+  <section id="contact">
+    <h2>Contact & Partnership</h2>
+    <p>
+      Feel the call of the cosmos and join us on this transformative journey. Whether you have inquiries or wish to partner in our mission to radiate kindness, reach out to us at: 
+      <a href="mailto:info@gpstar-map.com" style="color: #ffd700;">info@gpstar-map.com</a>
+    </p>
+  </section>
+  
+  <footer>
+    <p>&copy; 2025 GP - The Cosmic Star Map. All rights reserved.</p>
+  </footer>
+  
+  <script>
+    // Create a dynamic starry background with randomly placed stars
+    function createStars(num) {
+      const body = document.body;
+      for (let i = 0; i < num; i++) {
+        const star = document.createElement('div');
+        star.className = 'star';
+        star.style.top = Math.random() * 100 + '%';
+        star.style.left = Math.random() * 100 + '%';
+        star.style.animationDelay = Math.random() * 2 + 's';
+        star.style.transform = `scale(${Math.random()})`;
+        body.appendChild(star);
+      }
+    }
+    createStars(100);
+  </script>
+</body>
+</html>
+
