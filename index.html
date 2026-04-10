@@ -1,20 +1,38 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>GP Star Map</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kindness Galaxy</title>
     <style>
-        body {
-            background-color: black;
-            color: white;
-            text-align: center;
-            font-family: Arial, sans-serif;
-        }
+        body { font-family: Arial, sans-serif; }
+        .star { font-size: 24px; padding: 10px; }
     </style>
 </head>
 <body>
-    <h1>Welcome to the GP Star Map</h1>
-    <p>The journey of kindness starts here.</p>
+    <h1>Welcome to the Kindness Galaxy</h1>
+    <form id="kindnessForm">
+        <label for="name">Your Name:</label>
+        <input type="text" id="name" required>
+        <label for="kindness">Describe Kindness:</label>
+        <textarea id="kindness" required></textarea>
+        <button type="submit">Submit</button>
+    </form>
+    <div id="starDisplay"></div>
+    <script>
+        const form = document.getElementById('kindnessForm');
+        const starDisplay = document.getElementById('starDisplay');
+
+        form.addEventListener('submit', function(event) {
+            event.preventDefault();
+            const name = document.getElementById('name').value;
+            const kindness = document.getElementById('kindness').value;
+            const starElement = document.createElement('div');
+            starElement.className = 'star';
+            starElement.textContent = `${name} - ${kindness}`;
+            starDisplay.appendChild(starElement);
+            form.reset();
+        });
+    </script>
 </body>
 </html>
