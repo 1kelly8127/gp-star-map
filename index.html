@@ -3,52 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kindness Galaxy</title>
-    <style>
-        body { background: linear-gradient(to right, #000428, #004e92); color: white; font-family: Arial, sans-serif; }
-        #form-container { width: 50%; margin: auto; padding: 20px; background: rgba(255, 255, 255, 0.1); border-radius: 10px; }
-        input[type="text"] { width: 100%; padding: 10px; margin: 10px 0; }
-        button { padding: 10px; background-color: #ff6f61; border: none; border-radius: 5px; color: white; cursor: pointer; }
-        button:hover { background-color: #ff3d3d; }
-        .category { margin: 20px 0; }
-    </style>
+    <link rel="stylesheet" href="styles.css">
+    <title>Kindness Galaxy App</title>
 </head>
 <body>
-    <div id="form-container">
-        <h1>Kindness Galaxy</h1>
-        <p>Submit your acts of kindness:</p>
-        <form id="kindness-form">
-            <div class="category">
-                <label for="kindness-input">Kindness:</label>
-                <input type="text" id="kindness-input" placeholder="Your act of kindness...">
-            </div>
-            <div class="category">
-                <label for="love-input">Love:</label>
-                <input type="text" id="love-input" placeholder="Your act of love...">
-            </div>
-            <div class="category">
-                <label for="faith-input">Faith:</label>
-                <input type="text" id="faith-input" placeholder="Your act of faith...">
-            </div>
-            <div class="category">
-                <label for="hope-input">Hope:</label>
-                <input type="text" id="hope-input" placeholder="Your act of hope...">
-            </div>
-            <button type="submit">Submit</button>
-        </form>
+    <h1>Kindness Galaxy App</h1>
+    <form id="submission-form">
+        <label for="category">Choose a category:</label>
+        <select id="category" name="category">
+            <option value="kindness">Kindness</option>
+            <option value="community">Community</option>
+            <option value="creativity">Creativity</option>
+        </select>
+        <label for="name">Your Name (optional):</label>
+        <input type="text" id="name" name="name">
+        <label for="description">Description:</label>
+        <textarea id="description" name="description" required></textarea>
+        <button type="submit">Submit</button>
+    </form>
+    <div id="star-gallery">
+        <!-- Live star gallery will be rendered here -->
     </div>
-    <script>
-        document.getElementById('kindness-form').addEventListener('submit', function(event) {
-            event.preventDefault();
-            const kindness = document.getElementById('kindness-input').value;
-            const love = document.getElementById('love-input').value;
-            const faith = document.getElementById('faith-input').value;
-            const hope = document.getElementById('hope-input').value;
-            const acts = { kindness, love, faith, hope };
-            localStorage.setItem('actsOfKindness', JSON.stringify(acts));
-            alert('Thank you for your submission!');
-            this.reset();
-        });
-    </script>
+    <script src="app.js"></script>
 </body>
 </html>
